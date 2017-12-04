@@ -1,6 +1,9 @@
 #!/bin/bash
+
+# relative/absolute path to the image set
 ROOT=images
 
+echo "Remove the generated images"
 categories=`ls $ROOT`
 for cat in $categories
 do
@@ -8,7 +11,6 @@ do
   path_sp=$ROOT/$cat/sp/
   path_gauss=$ROOT/$cat/gauss
   
-
   # remove the images from sp directories
   fix_sp=`ls $path_sp | grep 'fix*'`
   for fix_sp_cat in $fix_sp
@@ -27,13 +29,3 @@ do
   echo ""
 
 done
-
-# output=`ls images/dominantcol/sp/ | grep 'fix*'`
-# echo $output
-# output=`ls images/dominantcol/gauss/  | grep 'fix*'`
-# output=`ls images/fewcol/sp/  | grep 'fix*'`
-# output=`ls images/fewcol/gauss/  | grep 'fix*'`
-# output=`ls images/manycol/sp/  | grep 'fix*'`
-# output=`ls images/manycol/gauss/  | grep 'fix*'`
-# output=`ls images/people/sp/  | grep 'fix*'`
-# output=`ls images/people/gauss/  | grep 'fix*'`
